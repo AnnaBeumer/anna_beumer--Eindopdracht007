@@ -1,13 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Staatliches&display=swap");
+
+* {
+  text-align: center;
+  width: auto;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+/* header */
+.header {
+  font-family: "Staatliches";
+  font-size: 1.5rem;
+  background: rgb(46, 143, 245);
+  background: linear-gradient(
+    90deg,
+    rgba(46, 143, 245, 1) 0%,
+    rgba(29, 218, 253, 1) 50%,
+    rgba(69, 252, 225, 1) 100%
+  );
+}
+
+h1 {
+  margin: 0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* root voor inputfield select en table select */
+:root {
+  --select-border: white;
+  --select-focus: blue;
+  --select-arrow: var(--select-border);
+  --radius: 2px;
+  --baseFg: dimgray;
+  --baseBg: white;
+  --accentFg: #006fc2;
+  --accentBg: #bae1ff;
+}
+
+/* songForm - inputfield */
+.songForm {
+  margin: 1rem;
+}
+
+.songForm > input[type="text"],
+.songForm > select {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+input[type="text"] {
+  border: none;
+  border-bottom: 4px solid steelblue;
+}
+
+input[type="text"]:focus {
+  outline: 0;
+}
+
+.inputSelect {
+  font: 400 12px/1.3 sans-serif;
+  -webkit-appearance: none;
+  appearance: none;
+  color: var(--baseFg);
+  border: 1px solid var(--baseFg);
+  line-height: 1;
+  outline: 0;
+  padding: 0.65em 2.5em 0.55em 0.75em;
+  border-radius: var(--radius);
+  background-color: var(--baseBg);
+  background-image: linear-gradient(var(--baseFg), var(--baseFg)),
+    linear-gradient(-135deg, transparent 50%, var(--accentBg) 50%),
+    linear-gradient(-225deg, transparent 50%, var(--accentBg) 50%),
+    linear-gradient(var(--accentBg) 42%, var(--accentFg) 42%);
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-size: 1px 100%, 20px 22px, 20px 22px, 20px 100%;
+  background-position: right 20px center, right bottom, right bottom,
+    right bottom;
+}
+
+.inputSelect:hover {
+  background-image: linear-gradient(var(--accentFg), var(--accentFg)),
+    linear-gradient(-135deg, transparent 50%, var(--accentFg) 50%),
+    linear-gradient(-225deg, transparent 50%, var(--accentFg) 50%),
+    linear-gradient(var(--accentFg) 42%, var(--accentBg) 42%);
+}
+
+.inputSelect:active {
+  background-image: linear-gradient(var(--accentFg), var(--accentFg)),
+    linear-gradient(-135deg, transparent 50%, var(--accentFg) 50%),
+    linear-gradient(-225deg, transparent 50%, var(--accentFg) 50%),
+    linear-gradient(var(--accentFg) 42%, var(--accentBg) 42%);
+  color: var(--accentBg);
+  border-color: var(--accentFg);
+  background-color: var(--accentFg);
+}
+
+.button {
+  background-color: steelblue; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+/* songTable - songlist */
+.table {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#songTable {
+  width: 80%;
+  border-spacing: 0;
+  padding-top: 5px;
+}
+
+.tableHead {
+  background-color: steelblue;
+}
+
+#standard-select {
+  color: white;
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  outline: none;
+}
+
+.select {
+  cursor: pointer;
+}
+
+.select::after {
+  content: "";
+  width: 0.8em;
+  height: 0.5em;
+  background-color: var(--select-arrow);
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+}
+
+tr:nth-child(even) {
+  background-color: #c2ddfe;
+}
+td {
+  text-align: left;
+}
+
+.songItem {
+  font-family: "Nanum Gothic";
+}
+
+.delete-button {
+  text-align: center;
+}
+
+.hiddenGenre {
+  visibility: collapse;
+}
+
+.hiddenRating {
+  visibility: collapse;
 }

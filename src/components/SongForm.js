@@ -22,7 +22,7 @@ function SongForm() {
   };
 
   return (
-    <div>
+    <div className="songForm">
       <input
         placeholder="Title"
         type="text"
@@ -35,13 +35,21 @@ function SongForm() {
         value={artist}
         onChange={(e) => setArtist(e.target.value)}
       />
-      <select value={genre} onChange={(e) => setGenre(e.target.value)}>
+      <select
+        className="inputSelect"
+        value={genre}
+        onChange={(e) => setGenre(e.target.value)}
+      >
         <option value="Genre">Genre</option>
         <option value="Rock">Rock</option>
         <option value="Reggae">Reggae</option>
         <option value="Klassiek">Klassiek</option>
       </select>
-      <select value={rating} onChange={(e) => setRating(e.target.value)}>
+      <select
+        className="inputSelect"
+        value={rating}
+        onChange={(e) => setRating(e.target.value)}
+      >
         <option value="Rating">Rating</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -49,7 +57,7 @@ function SongForm() {
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
-      <button onClick={handleSubmit}>Submit</button>
+      <button className="button" onClick={handleSubmit}>Submit</button>
     </div>
   );
 }
